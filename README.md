@@ -6,7 +6,7 @@ In this section, we will provide a practical example of how to use the Template-
 Create a new Maven project in your preferred development environment. Ensure that Maven is installed and configured correctly.
 
 ## Step 2: Include the itrules Library in the POM
-Edit the [pom.xml](pom.xml) file to include the repository and the itrules dependency:
+Edit the [pom.xml](pom.xml?ts=2) file to include the repository and the itrules dependency:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -34,11 +34,11 @@ Edit the [pom.xml](pom.xml) file to include the repository and the itrules depen
 
 ## Step 3: Create a Template File
 
-Create a template file named [Form.itr](src/main/resources/Form.itr)  in your project resources and fill it. For more examples and detailed instructions on how to structure .itr templates, you can refer to the examples section in the main itrules repository.
+Create a template file named [Form.itr](src/main/resources/Form.itr?ts=2)  in your project resources and fill it. For more examples and detailed instructions on how to structure .itr templates, you can refer to the examples section in the main itrules repository.
 
 ## Step 4: Create a Class to Build the Frame
 
-Create a Java class [Main.java](src/main/java/Main.java) to build the frame that will be rendered using the template.
+Create a Java class [Main.java](src/main/java/Main.java?ts=2) to build the frame that will be rendered using the template.
 
 ## Step 5: Render the Frame Using the Template
 
