@@ -1,11 +1,22 @@
-import io.intino.itrules.*;
+import io.intino.itrules.Engine;
+import io.intino.itrules.Frame;
+import io.intino.itrules.FrameBuilder;
+import io.intino.itrules.TemplateReader;
 import io.intino.itrules.parser.ITRulesSyntaxError;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
 public class Main {
-	public static void main(String[] args) throws ITRulesSyntaxError {
+	public static void main(String[] args) throws ITRulesSyntaxError, IOException {
+		File dir = new File("gen/com/example/form");
+		dir.mkdirs();
 		var reader = new TemplateReader(Main.class.getResourceAsStream("/Form.itr"));
 		var engine = new Engine(reader.read());
-		System.out.println(engine.render(frame()));
+		String output = engine.render(frame());
+		Files.writeString(new File(dir, "UserForm.java").toPath(), output);
+		System.out.println(output);
 	}
 
 	private static Frame frame() {

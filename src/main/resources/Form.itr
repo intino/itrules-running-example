@@ -5,12 +5,12 @@ rule type(form)
 		$field+declare...[$NL]
 
 		public $className() {
-			$field+declare...[$NL]
+			$field+constructor...[$NL]
 		}
 
-		<<$field+get...[$NL]>>
+		<<$field+get...[$NL$NL]>>
 
-		<<$field+set...[$NL]>>
+		<<$field+set...[$NL$NL]>>
 
 		public void printFormDetails() {
 			System.out.println("Form Details:");
@@ -18,10 +18,13 @@ rule type(form)
 		}
 	}
 
-rule type(string) and trigger(declare)
+rule trigger(declare)
+	 private $type $name+FirstLowerCase;
+
+rule type(string) and trigger(constructor)
 	 this.$name = "<<$defaultValue>>";
 
-rule type(int) and trigger(declare)
+rule type(int) and trigger(constructor)
 	 this.$name = <<$defaultValue?0>>;
 
 rule trigger(get)
