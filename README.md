@@ -44,6 +44,8 @@ Create a Java class [Main.java](src/main/java/Main.java?ts=2) to build the frame
 
 The code in Main.java demonstrates how to call the itrules engine to render the frame using the template and obtain the result. Simply run the main class and the result is shown in the console.
 
+The output class is also saved in [UserForm.java](gen/com/example/form/UserForm.java)
+
 ## Additional Tools: itrules Plugin for IntelliJ IDEA
 
 If you are using IntelliJ IDEA, you can install the itrules plugin which provides:
