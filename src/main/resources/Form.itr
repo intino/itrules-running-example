@@ -5,7 +5,7 @@ rule type(form)
 		$field+declare...[$NL]
 
 		public $className() {
-			$field+constructor...[$NL]
+			$field+init...[$NL]
 		}
 
 		<<$field+get...[$NL$NL]>>
@@ -21,10 +21,10 @@ rule type(form)
 rule trigger(declare)
 	 private $type $name+FirstLowerCase;
 
-rule type(string) and trigger(constructor)
+rule type(string) and trigger(init)
 	 this.$name = "<<$defaultValue>>";
 
-rule type(int) and trigger(constructor)
+rule type(int) and trigger(init)
 	 this.$name = <<$defaultValue?0>>;
 
 rule trigger(get)
